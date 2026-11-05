@@ -1,0 +1,117 @@
+---
+import Icon from '../components/Icon.astro';
+import '../styles/global.css';
+const rewards = [
+  { id: 'burger', category: 'comida', label: 'PARA EL ANTOJO', title: 'Una hamburguesa\nbien ganada.', points: '350', image: '/assets/reward-burger.jpg', alt: 'Hamburguesa con queso, vegetales y pan de sésamo', tag: 'Comida', color: 'gold' },
+  { id: 'frappe', category: 'bebidas', label: 'PARA LA PAUSA', title: 'Tu próxima pausa\nsabe mejor.', points: '250', image: '/assets/reward-coffee.jpg', alt: 'Café helado servido en un vaso', tag: 'Bebidas', color: 'purple' },
+  { id: 'style', category: 'estilo', label: 'PARA TU FLOW', title: 'Un look\nde otro nivel.', points: '500', image: '/assets/reward-style.jpg', alt: 'Barbero realizando un corte de cabello en una barbería', tag: 'Estilo', color: 'green' },
+];
+const faqs = [
+  ['¿Qué es Ganadazo?', 'Una propuesta nacida en Cusco que conecta juegos cortos con recompensas de negocios locales. La idea es simple: juegas, acumulas puntos y los usas para descubrir productos y experiencias cerca de ti.'],
+  ['¿Ya puedo jugar y canjear premios?', 'Todavía no. Estamos preparando el piloto. Esta web te permite conocer la propuesta y explorar ejemplos; los premios, puntajes y condiciones definitivas se confirmarán antes del lanzamiento.'],
+  ['¿Cómo funcionará el canje?', 'Durante el piloto, podrás elegir una recompensa con tus puntos y recibir un código. Luego visitarás el negocio aliado para validarlo y recoger tu premio, según su disponibilidad y condiciones.'],
+  ['¿En qué ciudades estará disponible?', 'Empezamos en Cusco. Nuestro primer paso será probar la experiencia con jóvenes y negocios de la ciudad antes de explorar nuevos lugares.'],
+  ['¿Cómo puede participar mi negocio?', 'El piloto está pensado para cafeterías, restaurantes, barberías y otros negocios locales. La propuesta es que elijas qué recompensa ofrecer y que los jugadores visiten tu local para canjearla. Los canales de inscripción se anunciarán al abrir la convocatoria.'],
+];
+---
+<!doctype html>
+<html lang="es-PE">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0F0E17" />
+    <title>Ganadazo — Juega. Gana. Canjea. | Hecho en Cusco</title>
+    <meta name="description" content="Tu próxima partida tiene premio. Conoce Ganadazo: juegos, puntos y recompensas de negocios locales. Estamos preparando nuestro piloto en Cusco." />
+    <meta property="og:title" content="Ganadazo — Tu próxima partida tiene premio" />
+    <meta property="og:description" content="De la pantalla a tu barrio. Descubre una nueva forma de jugar, ganar y canjear en Cusco." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_PE" />
+    <meta property="og:image" content="https://ganadazo-cusco.espacio-de-t-0280.chatgpt.site/assets/ganadazo-logo.webp" />
+    <link rel="icon" type="image/png" href="/assets/ganadazo-trofeo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" as="image" href="/assets/hero-trophy.webp" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="header">
+      <div class="nav-shell container">
+        <a class="brand" href="#inicio" aria-label="Ganadazo, inicio"><img src="/assets/ganadazo-trofeo.webp" alt="" width="47" height="38" /><span>GANADAZO<span class="brand-dot">✦</span></span></a>
+        <nav class="desktop-nav" aria-label="Navegación principal">
+          <a href="#como-funciona">Cómo funciona</a><a href="#recompensas">Recompensas</a><a href="#negocios">Para negocios</a>
+        </nav>
+        <a class="nav-cta" href="#recompensas">Descubre Ganadazo <Icon name="diagonal" size={17} /></a>
+        <button id="menu-toggle" class="icon-button menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav"><Icon name="menu" /></button>
+      </div>
+      <nav id="mobile-nav" class="mobile-nav" aria-label="Navegación móvil" hidden><a href="#como-funciona">Cómo funciona</a><a href="#recompensas">Recompensas</a><a href="#negocios">Para negocios</a><a href="#preguntas">Preguntas frecuentes</a></nav>
+    </header>
+
+    <main id="contenido">
+      <section id="inicio" class="hero container">
+        <div class="hero-copy">
+          <div class="eyebrow launch-badge"><span class="status-dot"></span> EL PRÓXIMO NIVEL DE CUSCO <span class="badge-separator">/</span> PRONTO</div>
+          <h1>Juega.<br />Gana.<br /><span class="gold-text">Canjea.</span><span class="hero-spark" aria-hidden="true">✳</span></h1>
+          <p class="hero-description">Tus mejores partidas merecen algo real.<br class="desktop-break" /> Convierte tus puntos en recompensas de<br class="desktop-break" /> tus próximos locales favoritos.</p>
+          <div class="hero-actions"><a class="button button-gold" href="#recompensas">Explorar recompensas <Icon name="arrow" size={20} /></a><a class="text-link" href="#como-funciona"><span class="play-icon">▶</span> Así funciona</a></div>
+          <div class="hero-location"><Icon name="pin" size={17} /><span>Hecho en Cusco. Pensado para ti.</span><span class="tiny-star">✦</span></div>
+        </div>
+        <div class="hero-visual" aria-label="Trofeo de Ganadazo rodeado de monedas y ejemplos de recompensas">
+          <div class="visual-grid" aria-hidden="true"></div><div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div>
+          <span class="visual-label eyebrow">BUENAS PARTIDAS. MEJORES PLANES.</span>
+          <img class="hero-trophy" src="/assets/hero-trophy.webp" width="1000" height="1000" alt="Trofeo dorado con una Chakana púrpura, sobre un pedestal rodeado de monedas" fetchpriority="high" />
+          <div class="floating-ticket points-ticket" aria-hidden="true"><span class="ticket-icon"><Icon name="bolt" size={23} /></span><div><span class="ticket-caption">CADA RETO CUENTA</span><strong>¡Suma puntos!</strong></div><span class="ticket-plus">+</span></div>
+          <div class="floating-ticket reward-ticket" aria-hidden="true"><div class="ticket-food">🍔</div><div><span class="ticket-caption">DE LA PARTIDA AL PLAN</span><strong>Se juega. Se disfruta.</strong><span class="ticket-note"><span></span> Recompensas por descubrir</span></div></div>
+          <div class="hero-level" aria-hidden="true"><span class="level-line"></span><span>MENOS SCROLL. MÁS GANADAZO.</span><span class="level-line"></span></div>
+          <span class="pixel-cross cross-one" aria-hidden="true">+</span><span class="pixel-cross cross-two" aria-hidden="true">+</span>
+        </div>
+      </section>
+
+      <div class="brand-strip" aria-label="Juega, gana y descubre Cusco"><div class="strip-content"><span>JUEGA CON GANAS</span><span class="strip-star">✳</span><span>GANA EN LA VIDA REAL</span><span class="strip-star">✳</span><span>DESCUBRE LO LOCAL</span><span class="strip-star">✳</span><span>HECHO EN CUSCO</span><span class="strip-star">✳</span></div></div>
+
+      <section id="como-funciona" class="section how-section container">
+        <div class="section-heading" data-reveal><div><p class="eyebrow section-eyebrow"><span class="mini-line"></span> ASÍ DE SIMPLE</p><h2>De una buena partida<br />a un <span class="gold-text">buen plan.</span></h2></div><p class="section-intro">Tu tiempo de juego puede convertirse en algo más.<br />Así funcionará la experiencia Ganadazo.</p></div>
+        <div class="steps">
+          <article class="step" data-reveal><div class="step-top"><span class="step-icon"><Icon name="game" size={30} /></span><span class="step-number">01</span></div><h3>Juega a tu ritmo.</h3><p>Retos cortos, niveles por superar y ese “una partida más” que ya conoces.</p><span class="step-tag">DALE PLAY</span><span class="step-arrow" aria-hidden="true">↗</span></article>
+          <article class="step" data-reveal><div class="step-top"><span class="step-icon purple-icon"><Icon name="star" size={29} /></span><span class="step-number">02</span></div><h3>Cada logro suma.</h3><p>Acumula puntos mientras avanzas. Tú eliges por qué recompensa ir.</p><span class="step-tag">SUBE DE NIVEL</span><span class="step-arrow" aria-hidden="true">↗</span></article>
+          <article class="step" data-reveal><div class="step-top"><span class="step-icon green-icon"><Icon name="gift" size={29} /></span><span class="step-number">03</span></div><h3>Sal y disfrútalo.</h3><p>Canjea tu código en el negocio aliado. El premio te espera fuera de la pantalla.</p><span class="step-tag">HAZLO REAL</span><span class="step-arrow" aria-hidden="true">↗</span></article>
+        </div>
+      </section>
+
+      <section id="recompensas" class="section rewards-section">
+        <div class="container">
+          <div class="section-heading" data-reveal><div><p class="eyebrow section-eyebrow"><span class="mini-line"></span> PUNTOS QUE SE DISFRUTAN</p><h2>Esto sí se siente<br /><span class="gold-text">como una victoria.</span></h2></div><p class="section-intro">Algo rico. Un nuevo look. Tu próxima pausa.<br />Imagínate todo lo que podrías ganar.</p></div>
+          <div class="filter-bar"><div class="filters" role="group" aria-label="Filtrar recompensas"><button type="button" data-filter="todos" aria-pressed="true">Todo <span>03</span></button><button type="button" data-filter="comida" aria-pressed="false">Comida</button><button type="button" data-filter="bebidas" aria-pressed="false">Bebidas</button><button type="button" data-filter="estilo" aria-pressed="false">Estilo</button></div><span class="preview-label"><span class="status-dot"></span> UN VISTAZO A LO QUE VIENE</span></div>
+          <p id="filter-status" class="sr-only" aria-live="polite">3 recompensas de ejemplo</p>
+          <div class="reward-grid">
+            {rewards.map(reward => <article class={`reward-card ${reward.color}`} data-reward-card data-category={reward.category} data-reveal>
+              <div class="reward-image-wrap"><img src={reward.image} alt={reward.alt} loading="lazy" width="600" height="460" /><span class="reward-category">{reward.tag}</span><span class="reward-example">EJEMPLO</span><div class="reward-image-shade"></div><span class="reward-mini-title">{reward.label}</span></div>
+              <div class="reward-content"><h3>{reward.title.split('\n').map(line => <span>{line}</span>)}</h3><div class="reward-bottom"><span class="points"><Icon name="bolt" size={17} /> {reward.points} <small>pts de ejemplo</small></span><button type="button" class="reward-button" data-reward={reward.id} aria-label={`Ver detalle: ${reward.title.replace('\n', ' ')}`}><Icon name="diagonal" size={21} /></button></div></div>
+            </article>)}
+          </div>
+          <p class="rewards-disclaimer"><Icon name="star" size={14} /> Una muestra de lo que estamos imaginando. Premios y puntajes ilustrativos, sujetos a confirmación para el piloto.</p>
+        </div>
+      </section>
+
+      <section id="negocios" class="section business-section container">
+        <div class="business-panel" data-reveal>
+          <div class="business-copy"><p class="eyebrow"><Icon name="shop" size={17} /> PARA LOS QUE MUEVEN EL BARRIO</p><h2>Tu próximo cliente<br />puede estar<br /><span>jugando.</span></h2><p>Convierte una buena partida en una visita a tu local. Estamos preparando el piloto con negocios de Cusco que quieren conectar con una nueva generación.</p><ul class="business-benefits"><li><Icon name="check" size={17} /> Tú eliges qué recompensa ofrecer.</li><li><Icon name="check" size={17} /> El canje lleva al jugador a tu local.</li><li><Icon name="check" size={17} /> Una nueva razón para volver a visitarte.</li></ul><button type="button" class="button button-light" data-business>Conocer el piloto <Icon name="diagonal" size={20} /></button></div>
+          <div class="business-art"><div class="business-circle"></div><span class="business-star star-top" aria-hidden="true">✳</span><div class="partner-pass"><div class="pass-top"><span class="eyebrow">EL SIGUIENTE NIVEL</span><Icon name="diagonal" size={22} /></div><div class="shop-symbol"><Icon name="shop" size={70} /></div><p>TU NEGOCIO.<br /><strong>UN NUEVO<br />PUNTO DE ENCUENTRO.</strong></p><div class="pass-dash"></div><div class="pass-bottom"><span>GANADAZO × CUSCO</span><span class="pass-bars" aria-hidden="true"></span></div></div><div class="local-sticker"><Icon name="heart" size={16} /> LO LOCAL<br />SE JUEGA EN GRANDE</div><span class="business-star star-bottom" aria-hidden="true">✳</span></div>
+        </div>
+      </section>
+
+      <section id="preguntas" class="section faq-section container">
+        <div class="faq-heading" data-reveal><p class="eyebrow section-eyebrow"><span class="mini-line"></span> SIN QUEDARTE CON LA DUDA</p><h2>Antes de<br />darle <span class="gold-text">play.</span></h2><p>Lo que necesitas saber<br />para entrar en el juego.</p><div class="faq-decor" aria-hidden="true"><Icon name="game" size={60} /><span>?</span></div></div>
+        <div class="faq-list" data-reveal>{faqs.map(([question, answer], index) => <details class="faq"><summary><span class="faq-number">0{index + 1}</span><span>{question}</span><span class="faq-plus"><Icon name="plus" size={19} /></span></summary><p>{answer}</p></details>)}</div>
+      </section>
+
+      <section class="final-section" data-reveal><div class="container final-content"><span class="eyebrow">DE CUSCO, CON GANAS.</span><h2>Hay partidas que<br /><span>se ganan afuera.</span></h2><a class="button button-gold" href="#recompensas">Encuentra tu próxima recompensa <Icon name="arrow" size={21} /></a><p>Próximamente en tus locales favoritos de Cusco.</p><span class="final-spark spark-left" aria-hidden="true">✳</span><span class="final-spark spark-right" aria-hidden="true">✳</span></div></section>
+    </main>
+
+    <footer class="footer container"><div class="footer-top"><a class="brand" href="#inicio" aria-label="Ganadazo, volver al inicio"><img src="/assets/ganadazo-trofeo.webp" alt="" width="47" height="38" /><span>GANADAZO<span class="brand-dot">✦</span></span></a><p>Juega. Gana. Canjea.</p><a href="#inicio" class="back-top">Volver arriba <Icon name="diagonal" size={16} /></a></div><div class="footer-bottom"><span>© {new Date().getFullYear()} Ganadazo. Hecho con ganas en Cusco, Perú.</span><span class="footer-pilot"><span class="status-dot"></span> Piloto en preparación</span></div></footer>
+
+    <dialog id="reward-dialog" class="dialog" aria-labelledby="reward-title" aria-describedby="reward-description"><button type="button" class="dialog-close icon-button" data-close-dialog aria-label="Cerrar detalle"><Icon name="close" /></button><span class="dialog-symbol"><Icon name="gift" size={34} /></span><p id="reward-category" class="eyebrow gold-text">RECOMPENSA DE EJEMPLO</p><h2 id="reward-title">Una recompensa para ti</h2><p id="reward-description"></p><div id="reward-points" class="dialog-points"></div><div class="dialog-note"><strong>Estamos preparando el piloto.</strong><p>Este es un ejemplo para conocer la experiencia. Los puntos no tienen valor monetario y todavía no se pueden canjear premios. Confirmaremos los locales, la disponibilidad y las condiciones antes de lanzar.</p></div><button type="button" class="button button-gold dialog-action" data-close-dialog>Seguir explorando <Icon name="arrow" size={18} /></button></dialog>
+    <dialog id="business-dialog" class="dialog business-dialog" aria-labelledby="business-title"><button type="button" class="dialog-close icon-button" data-close-dialog aria-label="Cerrar información del piloto"><Icon name="close" /></button><span class="dialog-symbol"><Icon name="shop" size={34} /></span><p class="eyebrow gold-text">PRIMERA PARADA: CUSCO</p><h2 id="business-title">Lo bueno empieza en tu local.</h2><p>Estamos diseñando un piloto con negocios locales. Así sería tu participación:</p><ol class="pilot-steps"><li><span>01</span><div><strong>Elige tu recompensa</strong><p>Un producto, un combo o un descuento que tenga sentido para tu negocio.</p></div></li><li><span>02</span><div><strong>Recibe a los jugadores</strong><p>El cliente visita tu local y presenta su código de canje.</p></div></li><li><span>03</span><div><strong>Descubre qué funciona</strong><p>Aprende de las visitas y los canjes durante el piloto.</p></div></li></ol><div class="dialog-note"><strong>Convocatoria próximamente</strong><p>Publicaremos aquí los canales de contacto y las condiciones cuando abramos las inscripciones.</p></div><button type="button" class="button button-gold dialog-action" data-close-dialog>Entendido <Icon name="check" size={18} /></button></dialog>
+    <script>import '../scripts/interactions';</script>
+  </body>
+</html>
