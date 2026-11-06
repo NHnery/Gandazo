@@ -1,0 +1,41 @@
+---
+import Icon from '../components/Icon.astro';
+import '../styles/global.css';
+import '../styles/game.css';
+---
+<!doctype html>
+<html lang="es-PE">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0f0e17" />
+    <title>Prueba beta del juego | Ganadazo Runner</title>
+    <meta name="description" content="Practica para cuando el juego esté listo. Corre con el torito de Ganadazo, salta obstáculos y supera tu récord en esta beta para móvil y computadora." />
+    <link rel="icon" href="/assets/ganadazo-trofeo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="game-page">
+    <a class="skip-link" href="#game-primary">Ir al juego</a>
+    <header class="game-header game-container"><a class="brand" href="/" aria-label="Ganadazo, volver a la web"><img src="/assets/ganadazo-trofeo.webp" alt="" width="43" height="34" /><span>GANADAZO<span class="brand-dot">✦</span></span></a><a class="game-back" href="/"><span aria-hidden="true">←</span> Volver a la web</a></header>
+    <main class="game-container">
+      <div class="game-intro"><div><p class="eyebrow"><span class="status-dot"></span> GANADAZO RUNNER <span class="beta-pill">BETA</span></p><h1>Corre. Salta. <span>Supérate.</span></h1><p class="game-subtitle">Practica para cuando el juego esté listo.</p></div><span class="practice-label"><Icon name="game" size={20} /><span>Una partida corta.<br /><strong>Un nuevo récord.</strong></span></span></div>
+      <section id="game-console" class="game-console" aria-label="Prueba beta de Ganadazo Runner">
+        <div class="game-toolbar"><div class="live-state"><span class="status-dot"></span><span id="run-state">PREPARANDO LA PISTA</span></div><span id="game-level">NIVEL 1</span><div class="game-tools"><button type="button" id="game-pause" aria-label="Pausar partida" title="Pausar · P" disabled>Ⅱ</button><button type="button" id="game-fullscreen" aria-label="Pantalla completa" title="Pantalla completa"><Icon name="diagonal" size={18} /></button></div></div>
+        <div class="scoreboard" aria-label="Marcador"><div><span>PUNTOS</span><strong id="game-score">0000</strong></div><div><span><Icon name="bolt" size={12} /> MONEDAS</span><strong id="game-coins">00</strong></div><div><span><Icon name="star" size={12} /> TU RÉCORD</span><strong id="game-best">0000</strong></div></div>
+        <div id="play-surface" class="play-surface" tabindex="0" aria-label="Zona de juego. Espacio para saltar, flecha abajo para agacharte y P para pausar." aria-describedby="game-instructions" data-state="loading">
+          <div id="runner-canvas" class="runner-canvas"></div>
+          <div id="game-overlay" class="game-overlay"><div class="overlay-card"><div class="overlay-emblem" aria-hidden="true"><Icon name="game" size={35} /></div><span class="eyebrow">TU SIGUIENTE INTENTO EMPIEZA AQUÍ</span><h2 id="overlay-title">Preparando la pista…</h2><p id="overlay-description">Cargando el juego. Un momento y empezamos.</p><div id="run-results" class="run-results" hidden><div><strong id="result-score">0</strong><span>PUNTOS</span></div><div><strong id="result-coins">0</strong><span>MONEDAS</span></div><div><strong id="result-time">0s</strong><span>TIEMPO</span></div></div><button type="button" class="button button-gold" id="game-primary" disabled>Cargando…</button><span class="overlay-note">Modo práctica · Sin premios canjeables</span></div></div>
+        </div>
+        <div class="control-deck"><div id="game-instructions" class="keyboard-instructions"><span><kbd>ESPACIO</kbd> o <kbd>↑</kbd> Salta</span><span><kbd>↓</kbd> Agáchate</span><span><kbd>P</kbd> Pausa</span></div><div class="touch-controls"><button type="button" id="game-duck" class="game-control duck-control" disabled><span class="control-arrow" aria-hidden="true">↓</span><span>Agacharse<small>Mantén o toca</small></span></button><button type="button" id="game-jump" class="game-control jump-control" disabled><span class="control-arrow" aria-hidden="true">↑</span><span>Saltar<small>¡Es tu momento!</small></span></button></div><span class="touch-tip">También puedes tocar la pista para saltar.</span></div>
+      </section>
+      <p id="game-announcement" class="sr-only" aria-live="polite"></p>
+      <div class="game-footnote"><p><Icon name="star" size={15} /><span>Esta es una beta de práctica. Los puntos y las monedas <strong>no se canjean por premios</strong>.</span></p><span>Tu récord se guarda solo en este navegador.</span></div>
+      <div class="game-tips"><article><span>01</span><div><h3>Encuentra tu ritmo.</h3><p>Salta las piedras, los cactus y las vallas.</p></div></article><article><span>02</span><div><h3>Ojo con el cielo.</h3><p>Cuando aparezcan aves, agáchate para pasar.</p></div></article><article><span>03</span><div><h3>Hazlo ganadazo.</h3><p>Cada moneda suma 25 puntos de práctica.</p></div></article></div>
+    </main>
+    <footer class="game-footer game-container"><span>HECHO EN CUSCO. JUGADO POR TI.</span><a href="/#recompensas">Conoce lo que viene <Icon name="arrow" size={15} /></a></footer>
+    <noscript><p class="noscript-notice">Activa JavaScript en tu navegador para jugar a la beta.</p></noscript>
+    <script>import '../game/beta-controller';</script>
+  </body>
+</html>

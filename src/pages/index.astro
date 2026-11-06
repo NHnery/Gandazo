@@ -8,7 +8,7 @@ const rewards = [
 ];
 const faqs = [
   ['¿Qué es Ganadazo?', 'Una propuesta nacida en Cusco que conecta juegos cortos con recompensas de negocios locales. La idea es simple: juegas, acumulas puntos y los usas para descubrir productos y experiencias cerca de ti.'],
-  ['¿Ya puedo jugar y canjear premios?', 'Todavía no. Estamos preparando el piloto. Esta web te permite conocer la propuesta y explorar ejemplos; los premios, puntajes y condiciones definitivas se confirmarán antes del lanzamiento.'],
+  ['¿Ya puedo jugar y canjear premios?', 'Ya puedes probar la beta del juego y practicar para superar tu récord. Sus puntos y monedas son de práctica y no se pueden canjear. Los premios reales, puntajes y condiciones se confirmarán antes del lanzamiento del piloto.'],
   ['¿Cómo funcionará el canje?', 'Durante el piloto, podrás elegir una recompensa con tus puntos y recibir un código. Luego visitarás el negocio aliado para validarlo y recoger tu premio, según su disponibilidad y condiciones.'],
   ['¿En qué ciudades estará disponible?', 'Empezamos en Cusco. Nuestro primer paso será probar la experiencia con jóvenes y negocios de la ciudad antes de explorar nuevos lugares.'],
   ['¿Cómo puede participar mi negocio?', 'El piloto está pensado para cafeterías, restaurantes, barberías y otros negocios locales. La propuesta es que elijas qué recompensa ofrecer y que los jugadores visiten tu local para canjearla. Los canales de inscripción se anunciarán al abrir la convocatoria.'],
@@ -44,7 +44,7 @@ const faqs = [
         <a class="nav-cta" href="#recompensas">Descubre Ganadazo <Icon name="diagonal" size={17} /></a>
         <button id="menu-toggle" class="icon-button menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav"><Icon name="menu" /></button>
       </div>
-      <nav id="mobile-nav" class="mobile-nav" aria-label="Navegación móvil" hidden><a href="#como-funciona">Cómo funciona</a><a href="#recompensas">Recompensas</a><a href="#negocios">Para negocios</a><a href="#preguntas">Preguntas frecuentes</a></nav>
+      <nav id="mobile-nav" class="mobile-nav" aria-label="Navegación móvil" hidden><a href="/juego/">Prueba beta del juego</a><a href="#como-funciona">Cómo funciona</a><a href="#recompensas">Recompensas</a><a href="#negocios">Para negocios</a><a href="#preguntas">Preguntas frecuentes</a></nav>
     </header>
 
     <main id="contenido">
@@ -53,7 +53,7 @@ const faqs = [
           <div class="eyebrow launch-badge"><span class="status-dot"></span> EL PRÓXIMO NIVEL DE CUSCO <span class="badge-separator">/</span> PRONTO</div>
           <h1>Juega.<br />Gana.<br /><span class="gold-text">Canjea.</span><span class="hero-spark" aria-hidden="true">✳</span></h1>
           <p class="hero-description">Tus mejores partidas merecen algo real.<br class="desktop-break" /> Convierte tus puntos en recompensas de<br class="desktop-break" /> tus próximos locales favoritos.</p>
-          <div class="hero-actions"><a class="button button-gold" href="#recompensas">Explorar recompensas <Icon name="arrow" size={20} /></a><a class="text-link" href="#como-funciona"><span class="play-icon">▶</span> Así funciona</a></div>
+          <div class="hero-actions beta-hero-actions"><div class="hero-beta-group"><a class="button button-gold" href="/juego/">Prueba beta del juego <Icon name="game" size={20} /></a><small class="beta-note">Practica para cuando el juego esté listo.</small></div><a class="text-link" href="#como-funciona"><span class="play-icon">▶</span> Así funciona</a></div>
           <div class="hero-location"><Icon name="pin" size={17} /><span>Hecho en Cusco. Pensado para ti.</span><span class="tiny-star">✦</span></div>
         </div>
         <div class="hero-visual" aria-label="Trofeo de Ganadazo rodeado de monedas y ejemplos de recompensas">
